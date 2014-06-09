@@ -19,7 +19,7 @@ FB.getLoginStatus(function(response) {
     //同樣要求使用者登入
   }
  });
-
+};
 
 //以下為canvas的程式碼，基本上不需多動，依據comments修改即可
 	
@@ -35,7 +35,7 @@ FB.getLoginStatus(function(response) {
 	img3.src = "img/typography.png"//圖像路徑
 	
 	
-
+		
 	//宣告基本變數
     var canvas=document.getElementById("canvas"); //宣告變數找到canvas標籤
     var ctx=canvas.getContext("2d"); //找到2d內容
@@ -99,7 +99,7 @@ FB.getLoginStatus(function(response) {
 
 
 
-}; //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<init end
+ //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<init end
 
 
 

@@ -1,52 +1,5 @@
 
 window.fbAsyncInit = function () {
-	function moveHandler(event) {
-    	
-    canMouseX = parseInt(event.clientX - x);
-    
-    canMouseY = parseInt(event.clientY - y);
-    
-    m = true;
-  }
-  
-  function _onTouchStart(event) {
-    
-    canMouseX = parseInt(event.clientX - x);
-    /** @type {number} */
-    canMouseY = parseInt(event.clientY - y);
-    /** @type {boolean} */
-    m = false;
-  }
-  /**
-   * @param {Event} event
-   * @return {undefined}
-   */
-  function fix(event) {
-    /** @type {number} */
-    canMouseX = parseInt(event.clientX - x);
-    /** @type {number} */
-    canMouseY = parseInt(event.clientY - y);
-  }
-  /**
-   * @param {Event} event
-   * @return {undefined}
-   */
-  function draw(event) {
-    if (canMouseX = parseInt(event.clientX - x), canMouseY = parseInt(event.clientY - y), m) {
-      ctx.clearRect(0, 0, cwidth, cheight);
-      /** @type {(HTMLElement|null)} */
-      var imgRadial = document.getElementById("preview1");
-      ctx.drawImage(imgRadial, canMouseX - 64, canMouseY - 60);
-      ctx.drawImage(copy, 200, 400);
-      ctx.drawImage(spriteImg, 0, 0);
-      var columnTitle = $("#inputed").val();
-      /** @type {string} */
-      ctx.fillStyle = "black";
-      /** @type {string} */
-      ctx.font = '20px "\u5fae\u8edf\u6b63\u9ed1\u9ad4"';
-      ctx.fillText(columnTitle, 275, 445);
-    }
-  }
 
     FB.init({
         appId: '543465452431076',
@@ -72,6 +25,8 @@ window.fbAsyncInit = function () {
         	FacebookLogin();
   		}  		
  	});
+};
+ 	
  	var ctx = document.getElementById('canvas').getContext('2d'); //宣告變數找到頁面的canvas標籤的2d內容
 	ctx.font='20px "Arial"'; //設定字體與大小
 	ctx.fillText("Click here to start fill with Facebook Profile Picture", 40, 270); //設定預設的開始畫面
@@ -141,7 +96,7 @@ window.fbAsyncInit = function () {
     $("#canvas").mouseup(function(e){handleMouseUp(e);});
     $("#canvas").mouseout(function(e){handleMouseOut(e);});
 	
- };
+ 
 
 (function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
