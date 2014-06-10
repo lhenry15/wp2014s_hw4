@@ -122,6 +122,7 @@ function PostImageToFacebook(authToken) {
     }
     var fd = new FormData();
     var access_token = FB.getAuthResponse()['accessToken'];
+    
     console.log('Access Token = '+ access_token);
     fd.append("access_token", authToken);//請思考accesstoken要怎麼傳到這function內
     fd.append("source", blob);//輸入的照片
