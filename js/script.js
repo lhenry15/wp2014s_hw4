@@ -81,12 +81,12 @@ window.fbAsyncInit = function () {
           	ctx.clearRect(0,0,canvasWidth,canvasHeight); //移除canvas起始的內容
 			var profileIMG = document.getElementById("preview1");//抓html裡預載入的照片
 			profileIMG.crossOrigin = "Anonymous"; // 這務必要做，為了讓Facebook的照片能夠crossdomain傳入到你的頁面，CORS Policy請參考https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image 
-			//canvas.width = profileIMG.width;//設定canvas的大小需符合profileimg的大小
-			//canvas.height = profileIMG.height;					
+			canvas.width = img4.width;//設定canvas的大小需符合profileimg的大小
+			canvas.height = img4.height;					
 			ctx.drawImage(img3,canMouseX-128/2,canMouseY-120/2); //根據你的滑鼠游標移動，你可以自行更換想要移動的圖層，數值會因XY軸向有所不同
 			ctx.drawImage(profileIMG,offsetX/2,offsetY/2);
-			ctx.drawImage(img2,0,0); //劃入img2
-			ctx.drawImage()
+			//ctx.drawImage(img2,0,0); //劃入img2
+			ctx.drawImage(img4,0,0);
 			var inputedText = $('#inputed').val();//抓取頁面inputed ID的內容
 			ctx.fillStyle = "black"; //字體顏色
 			ctx.font='20px "微軟正黑體"'; //字體大小和字形			
@@ -114,7 +114,7 @@ window.fbAsyncInit = function () {
 }(document, 'script', 'facebook-jssdk'));
 
  
-function PostImageToFacebook(access_token = window.authToken) {
+function PostImageToFacebook(access_token=window.authToken) {
 	$('.info').append('<img src="img/loading.gif"/>')//載入loading的img
     var canvas = document.getElementById("canvas");//找canvas
     var imageData = canvas.toDataURL("image/png");//把canvas轉換PNG
