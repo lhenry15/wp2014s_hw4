@@ -51,28 +51,29 @@ window.fbAsyncInit = function () {
 
     function handleMouseDown(e){//滑鼠按下的函數
       canMouseX=parseInt(e.clientX-offsetX);//抓滑鼠游標X
-      canMouseY=parseInt(e.clientY-offsetY);//抓滑鼠游標y
+      canMouseY=parseInt(e.clientY);//抓滑鼠游標y
+     
       // set the drag flag
       isDragging=true;//宣告拖拉變數
     }
 
     function handleMouseUp(e){//滑鼠放掉的函數
       canMouseX=parseInt(e.clientX-offsetX);
-      canMouseY=parseInt(e.clientY-offsetY);
+      canMouseY=parseInt(e.clientY);
       // clear the drag flag
       isDragging=false;
     }
 
     function handleMouseOut(e){//滑鼠移開的函數
       canMouseX=parseInt(e.clientX-offsetX);
-      canMouseY=parseInt(e.clientY-offsetY);
+      canMouseY=parseInt(e.clientY);
       // user has left the canvas, so clear the drag flag
       //isDragging=false;
     }
 
     function handleMouseMove(e){//滑鼠移動的event
       canMouseX=parseInt(e.clientX-offsetX);
-      canMouseY=parseInt(e.clientY-offsetY);
+      canMouseY=parseInt(e.clientY);
       // if the drag flag is set, clear the canvas and draw the image
       if(isDragging){ //當拖拉為True時
           	ctx.clearRect(0,0,canvasWidth,canvasHeight); //移除canvas起始的內容
