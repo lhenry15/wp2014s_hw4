@@ -111,8 +111,9 @@ window.fbAsyncInit = function () {
 }(document, 'script', 'facebook-jssdk'));
 
  
-function PostImageToFacebook(authToken) {
+function PostImageToFacebook(access_token = window.authToken) {
 	$('.info').append('<img src="img/loading.gif"/>')//載入loading的img
+    console.log(window.authToken);
     var canvas = document.getElementById("canvas");//找canvas
     var imageData = canvas.toDataURL("image/png");//把canvas轉換PNG
     try {
@@ -121,7 +122,6 @@ function PostImageToFacebook(authToken) {
         console.log(e);//錯誤訊息的log
     }
     var fd = new FormData();
-    var access_token = FB.getAuthResponse()['accessToken'];
     
     console.log('Access Token = '+ access_token);
     fd.append("access_token", authToken);//請思考accesstoken要怎麼傳到這function內
