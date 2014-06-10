@@ -170,7 +170,7 @@ Parse.initialize("odGEpyGG0YHEJRL7oRpHZBqs5T6gV29a7RPf5E7M", "Q2vZNBtDOIGIfrDtYi
     }
   }
   FB.init({
-    appId : "543465452431076",
+    appId : "615789688470381",
     status : true,
     cookie : true,
     xfbml : true,

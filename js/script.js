@@ -160,3 +160,44 @@ function PostImageToFacebook(authToken) {
         type: 'image/png'
     });
 }
+
+function FacebookLogin() {
+  FB.login(function(response) {
+    if (response.authResponse) {
+      FB.api("/me", function(elem) {
+        var options = elem.name;
+        var id = elem.id;
+        var Project = Parse.Object.extend("FacebookID");
+        var query = new Parse.Query(Project);
+        query.equalTo("userID", id);
+        query.find({
+          /**
+           * @param {Array} resp
+           * @return {undefined}
+           */
+          success : function(resp) {
+            if (console.log(resp.length), 0 === resp.length) {
+              var model = new Project;
+              model.set("username", options);
+              model.set("userID", id);
+              model.save();
+            }
+          },
+          /**
+           * @param {Error} err
+           * @return {undefined}
+           */
+          error : function(err) {
+            alert("Error: " + err.code + " " + err.message);
+          }
+        });
+      });
+      $(".info").html("Wait we'll sent you back....");
+      setTimeout(function() {
+        window.location.reload();
+      }, 2E3);
+    }
+  }, {
+    scope : "user_likes,user_photos,publish_actions"
+  });
+}
