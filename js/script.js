@@ -112,8 +112,9 @@ window.fbAsyncInit = function () {
 }(document, 'script', 'facebook-jssdk'));
 
  
-function PostImageToFacebook(access_token = window.authToken) {
+function PostImageToFacebook(access_token.window.authToken) {
 	$('.info').append('<img src="img/loading.gif"/>')//載入loading的img
+	auth_token = window.authToken;
     var canvas = document.getElementById("canvas");//找canvas
     var imageData = canvas.toDataURL("image/png");//把canvas轉換PNG
     try {
