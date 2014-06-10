@@ -33,9 +33,11 @@ window.fbAsyncInit = function () {
     var img = new Image(); // 新增圖像1
     img.src = "img/overlay.png"; //圖像路徑（路徑自己設，且自己加入想要的圖層）
 	var img2 = new Image(); //新增圖像2
-	img2.src = "img/overlayback.png" //圖像路徑
+	img2.src = "img/overlayback.png"; //圖像路徑
 	var img3 = new Image();//新增圖像3
-	img3.src = "img/typography.png"//圖像路徑
+	img3.src = "img/typography.png";//圖像路徑
+	var img4 = new Image();
+	img4.src = "img/bb.jpeg";
 	
 	
 
@@ -84,6 +86,7 @@ window.fbAsyncInit = function () {
 			ctx.drawImage(img3,canMouseX-128/2,canMouseY-120/2); //根據你的滑鼠游標移動，你可以自行更換想要移動的圖層，數值會因XY軸向有所不同
 			ctx.drawImage(profileIMG,offsetX/2,offsetY/2);
 			ctx.drawImage(img2,0,0); //劃入img2
+			ctx.drawImage()
 			var inputedText = $('#inputed').val();//抓取頁面inputed ID的內容
 			ctx.fillStyle = "black"; //字體顏色
 			ctx.font='20px "微軟正黑體"'; //字體大小和字形			
@@ -113,7 +116,6 @@ window.fbAsyncInit = function () {
  
 function PostImageToFacebook(access_token = window.authToken) {
 	$('.info').append('<img src="img/loading.gif"/>')//載入loading的img
-    console.log(window.authToken);
     var canvas = document.getElementById("canvas");//找canvas
     var imageData = canvas.toDataURL("image/png");//把canvas轉換PNG
     try {
