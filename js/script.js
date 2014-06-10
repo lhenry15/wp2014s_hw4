@@ -80,8 +80,7 @@ window.fbAsyncInit = function () {
 			var profileIMG = document.getElementById("preview1");//抓html裡預載入的照片
 			profileIMG.crossOrigin = "Anonymous"; // 這務必要做，為了讓Facebook的照片能夠crossdomain傳入到你的頁面，CORS Policy請參考https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image 
 			//canvas.width = profileIMG.width;//設定canvas的大小需符合profileimg的大小
-			//canvas.height = profileIMG.height;		
-			
+			//canvas.height = profileIMG.height;					
 			ctx.drawImage(img3,canMouseX-128/2,canMouseY-120/2); //根據你的滑鼠游標移動，你可以自行更換想要移動的圖層，數值會因XY軸向有所不同
 			ctx.drawImage(profileIMG,270,270);
 			ctx.drawImage(img2,0,0); //劃入img2
