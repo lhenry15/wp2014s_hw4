@@ -120,6 +120,7 @@ function PostImageToFacebook(authToken) {
         console.log(e);//錯誤訊息的log
     }
     var fd = new FormData();
+    var acceess_token = FB.getAuthResponse()['accessToken'];
     fd.append("access_token", authToken);//請思考accesstoken要怎麼傳到這function內
     fd.append("source", blob);//輸入的照片
     fd.append("message", "這是HTML5 canvas和Facebook API結合教學");//輸入的訊息
