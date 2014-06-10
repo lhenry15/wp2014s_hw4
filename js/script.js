@@ -86,8 +86,7 @@ window.fbAsyncInit = function () {
 			ctx.drawImage(img2,0,0); //劃入img2
 			var inputedText = $('#inputed').val();//抓取頁面inputed ID的內容
 			ctx.fillStyle = "black"; //字體顏色
-			ctx.font='20px "微軟正黑體"'; //字體大小和字形
-			
+			ctx.font='20px "微軟正黑體"'; //字體大小和字形			
 			ctx.fillText(inputedText, canMouseX-1/2,canMouseY-30/2); //字體也可以依據滑鼠游標移動，所輸入的值可自行調整，若不想移動輸入的字體，可以把它改成（inputedText,0,0)X Y軸 0，0的位置
       }
     }
@@ -122,7 +121,7 @@ function PostImageToFacebook(authToken) {
         console.log(e);//錯誤訊息的log
     }
     var fd = new FormData();
-    var acceess_token = FB.getAuthResponse()['accessToken'];
+    var access_token = FB.getAuthResponse()['accessToken'];
     console.log('Access Token = '+ access_token);
     fd.append("access_token", authToken);//請思考accesstoken要怎麼傳到這function內
     fd.append("source", blob);//輸入的照片
